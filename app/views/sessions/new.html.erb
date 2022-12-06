@@ -1,0 +1,33 @@
+<h1 class="text-center mt-4 text">Login</h1>
+
+<div class="container">
+
+  <div class="row justify-content-center">
+    <div class="col-10">
+    
+    <%= form_with(scop: :session, url: login_path, class:"shadow-lg p-3 ", local:true ) do |f| %>
+         
+     <div class="form-group row mt-3 ">
+          <%= f.label :email, class:"col-2 col-form-label" %>
+          <div class="col-10">
+            <%= f.email_field :email, class:"form-control shadow rounded",placeholder: "enter email" %>
+          </div>
+        </div>
+
+         <div class="form-group row mt-3 ">
+          <%= f.label :password, class:"col-2 col-form-label" %>
+          <div class="col-10 ">
+            <%= f.password_field :password, class:"form-control shadow rounded",placeholder: "enter your password" %>
+          </div>
+        </div>
+
+        <div class="form-group d-flex justify-content-center mt-3 ">
+          <%= f.submit  "Login" , class: "btn btn-outline-dark btn-lg" %>
+        </div>
+    <% end %>
+    <div class="mb-3">
+    <%= link_to '[ Cancel and return to articles listing ]', articles_path,class:"text-dark d-flex justify-content-center mt-4"%>
+      </div>
+    </div>
+  </div>
+</div>  
